@@ -5772,7 +5772,7 @@
             svg += `</svg>`;
             svgContainer.innerHTML = svg;
 
-            attachSankeyEvents(supplierNodes, totalSales, categoryMeta, identifiedCount, maxMarginSup, pfx);
+            attachSankeyEvents(supplierNodes, totalSales, categoryMeta, identifiedCount, maxMarginSup, pfx, query, type);
         }
 
         function attachReverseSankeyEvents(mfgNodes, query) {
@@ -5910,7 +5910,7 @@
         }
 
         // Attach mouse events to SVG elements with prefix awareness
-        function attachSankeyEvents(supplierNodes, totalSales, categoryMeta, identifiedCount, maxMarginSup, pfx) {
+        function attachSankeyEvents(supplierNodes, totalSales, categoryMeta, identifiedCount, maxMarginSup, pfx, query, type) {
             const container = document.getElementById(pfx === 'spt-' ? 'finderMfgSankeySvgContainer' : 'finderSankeySvgContainer');
             const tooltip = document.getElementById('sankeyTooltip');
             const paths = container.querySelectorAll('.sankey-path');
